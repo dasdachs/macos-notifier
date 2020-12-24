@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "notifier"
+name = "macos-notifier"
 version = "1.0.0"
 description = "MacOS custom notifications manager"
 authors = ["Jani Šumak <jani.sumak@gmail.com>"]

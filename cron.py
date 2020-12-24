@@ -12,7 +12,7 @@ TAB_FILE = "TAB_FILE"
 INTERVAL_RE = re.compile(r"@(?P<value>\d+)(?P<unit>s|m|h|d)")
 
 
-def create_crontab(title: str, text: str, interval: str) -> str:
+def create_crontab(title: str = "", text: str = "", interval: str = "") -> str:
     """Parses and interval and creates the notification interval"""
     cron = get_crontab()
 
