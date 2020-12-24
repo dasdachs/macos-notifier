@@ -1,10 +1,10 @@
 from pathlib import Path
-from setuptools import setup
+from setuptools import setup, find_packages
 
 long_description = Path("README.md").read_text()
 
 setup(
-    name="yourscript",
+    name="macos-notifier",
     version="1.0.1",
     author="Jani Šumak",
     author_email="jani.sumak@gmail.com",
@@ -13,12 +13,15 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/dasdachs/macos-notifier",
     py_modules=["macos_notifier"],
+    packages=find_packages(),
     classifiers=[
+        "Environment :: Console",
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
+        "Environment :: MacOS X",
         "Operating System :: Darwin",
     ],
-    python_requires=">=3.6",
+    python_requires=">=3.7",
     install_requires=[
         "Click",
         "Colorama",
