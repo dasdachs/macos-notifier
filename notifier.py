@@ -19,18 +19,18 @@ def cli():
 )
 def create(title: Optional[str], text: Optional[str], interval: Optional[str]) -> None:
     """Create MacOS notifications in crontabs"""
-    title = ""
-    text = ""
-    command_setup = len(title) != 0 and len(text) != 0
+    title_str = title if title else ""
+    text_str = text if text else ""
+    command_setup = len(title_str) != 0 and len(text_str) != 0
 
     while not command_setup:
-        if len(title) == 0:
+        if len(title_str) == 0:
             title = click.prompt(
                 click.style("Please type the title of the notification", fg="green"),
                 type=str,
             )
-        if len(text) == 0:
-            text = click.prompt(
+        if len(text_str) == 0:
+            text_str = click.prompt(
                 click.style("Please add the text of the notification", fg="blue"),
                 type=str,
             )
@@ -38,17 +38,17 @@ def create(title: Optional[str], text: Optional[str], interval: Optional[str]) -
         click.echo()
         click.secho("Current notification setting:", fg="yellow", bold=True)
         click.secho("-----------------------------", fg="yellow")
-        click.secho(f"Title: {title}", bold=True, fg="green")
-        click.secho(f"Text: {text}", bold=True, fg="blue")
+        click.secho(f"Title: {title_str}", bold=True, fg="green")
+        click.secho(f"Text: {text_str}", bold=True, fg="blue")
         click.echo()
 
         if click.confirm(click.style("Do you want to continue?", fg="red")):
             command_setup = True
         else:
             if click.confirm(click.style("Change the title?", fg="yellow")):
-                title = ""
+                title_str = ""
             if click.confirm(click.style("Change the text?", fg="yellow")):
-                text = ""
+                text_str = ""
         click.echo()
 
     if not interval:
@@ -59,8 +59,9 @@ def create(title: Optional[str], text: Optional[str], interval: Optional[str]) -
             ),
             type=str,
         )
+    interval_str = interval if interval else "* * * * *"
 
-    msg = create_crontab(title, text, interval)
+    msg = create_crontab(title_str, text_str, interval_str)
     click.echo(click.style(msg, fg="yellow"))
     click.secho("Please make sure to cancel it :)", fg="yellow")
 
