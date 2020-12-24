@@ -2,7 +2,7 @@ from typing import Optional
 
 import click
 
-from cron import create_crontab, delete_crontab
+from src.cron import create_crontab, delete_crontab
 
 
 @click.group()

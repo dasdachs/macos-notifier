@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-from cron import TAB_FILE, get_crontab, create_crontab, delete_crontab
+from src.cron import TAB_FILE, get_crontab, create_crontab, delete_crontab
 
 
 CRONTAB_FILE_NAME = "testing.tab"
