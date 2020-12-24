@@ -1,3 +1,6 @@
+from setuptools import setup
+
+
 setup(
     name='yourscript',
     version='1.0',
@@ -5,6 +8,7 @@ setup(
     install_requires=[
         'Click',
         'Colorama',
+        'python-crontab',
     ],
     entry_points='''
         [console_scripts]
