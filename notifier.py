@@ -1,4 +1,4 @@
-from typings import Optional
+from typing import Optional
 
 import click
 
