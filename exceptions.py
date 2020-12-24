@@ -1,0 +1,2 @@
+class InvalidNotificationIntervalException(Exception):
+    pass
