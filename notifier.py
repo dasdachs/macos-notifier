@@ -1,3 +1,5 @@
+from typings import Optional
+
 import click
 
 from cron import create_crontab, delete_crontab
@@ -15,7 +17,7 @@ def cli():
 @click.option(
     "--interval", help="Crontab interval, * * * * * or 21:00 or @5s every 5 seconds"
 )
-def create(title: str, text: str, interval: str) -> None:
+def create(title: Optional[str], text: Optional[str], interval: Optional[str]) -> None:
     """Create MacOS notifications in crontabs"""
     command_setup = type(title) != None and type(text) != None
 
