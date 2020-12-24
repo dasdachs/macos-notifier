@@ -6,6 +6,7 @@ long_description = Path("README.md").read_text()
 setup(
     name="macos-notifier",
     author="Jani Šumak",
+    version="1.0.3",
     author_email="jani.sumak@gmail.com",
     description="MacOS custom notifications manager",
     long_description=long_description,
@@ -18,7 +19,6 @@ setup(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Environment :: MacOS X",
-        "Operating System :: Darwin",
     ],
     python_requires=">=3.7",
     install_requires=[
